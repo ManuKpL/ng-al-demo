@@ -5,7 +5,7 @@ import { readFileSync } from 'fs';
 const PORT = process.env.PORT || 3000;
 const ENCODING = 'utf8';
 
-const indexHtml = resolve(__dirname, '../index.html');
+const indexHtml = resolve(__dirname, '../src/index.html');
 const lambdaAscii = resolve(__dirname, './lambda.txt');
 
 const lambda = readFileSync(lambdaAscii, ENCODING);
