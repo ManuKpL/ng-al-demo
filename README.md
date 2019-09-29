@@ -21,11 +21,11 @@ npm install
 Dependending on your tool, either
 
 ```
-yarn ts:compile
+yarn build
 ```
 or
 ```
-npm run ts:compile
+npm run build
 ```
 
 ### Launch server
