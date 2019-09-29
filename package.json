@@ -4,20 +4,23 @@
   "description": "A course demo repository for a full manual angular setup",
   "main": "index.js",
   "repository": "git@github.com:ManuKpL/ng-al-demo.git",
-  "author": "Emmanuel Capelle <emmanuel.capelle@gmail.com>",
+  "author": "Emmanuel Capelle",
   "license": "MIT",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "ts:compile": "tsc"
   },
   "dependencies": {
     "esm": "^3.2.25",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "tslint": "^5.20.0"
   },
   "engines": {
     "node": ">=10.16.0"
   },
   "devDependencies": {
     "eslint": "^6.5.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.3"
   }
 }

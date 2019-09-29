@@ -16,6 +16,18 @@ or
 npm install
 ```
 
+### Compile code
+
+Dependending on your tool, either
+
+```
+yarn ts:compile
+```
+or
+```
+npm run ts:compile
+```
+
 ### Launch server
 
 Dependending on your tool, either
