@@ -1,6 +1,7 @@
 // these packages had to be installed via npm
 // es2015 import syntax means we have to use the esm package when using webpack cli
 import { resolve } from 'path';
+import { TsConfigPathsPlugin } from 'awesome-typescript-loader';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -69,11 +70,23 @@ const config = {
       // define the name of the new css file created
       filename: '[name].bundle.css',
     }),
+
+    // prevent angular dependency request warning by setting ./src folder as root
+    new webpack.ContextReplacementPlugin(/(.+)?angular(\\|\/)core(.+)?/, resolve(__dirname, './src'), {}),
   ],
 
   // controls what bundle information gets displayed in the consolde
   stats: {
     children: false,
+    warningsFilter: /System.import/, // removes warning due to deprecated code in @angular transitive dependencies
+  },
+
+  resolve: {
+    // if a file is imported without its explicit extension,
+    // webpack will try to find <filename>.ts then <filename>.js
+    extensions: ['.ts', '.js'],
+
+    plugins: [new TsConfigPathsPlugin()],
   },
 };
 

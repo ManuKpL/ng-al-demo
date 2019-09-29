@@ -1,8 +1,9 @@
+import 'reflect-metadata';
+import 'zone.js';
+
+import { AppModule } from './app/app.module';
 import './styles.scss';
 
-(function appendTestParagraph(paragraphText: string) {
-  const p = document.createElement('p');
-  p.innerHTML = paragraphText;
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-  document.body.appendChild(p);
-})('Hello from dev server');
+platformBrowserDynamic().bootstrapModule(AppModule);
