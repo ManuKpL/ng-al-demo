@@ -3,6 +3,7 @@
 import { resolve } from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const config = {
   // our main source file that should import almost all other files
@@ -37,6 +38,17 @@ const config = {
         use: ['babel-loader', 'awesome-typescript-loader'],
         exclude: /node_module/,
       },
+
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader, // loader associated to the plugin creating new css files
+          'css-loader', // converts css to raw style string
+          'postcss-loader', // uses plugins defined in postcss.config to enrich the produced css
+          'sass-loader', // uses node-sass to convert sass/scss style to css
+        ],
+        exclude: /node_module/,
+      },
     ],
   },
   plugins: [
@@ -52,6 +64,13 @@ const config = {
       // defined the path to the template file to copy and inject into
       template: resolve(__dirname, './src/index.html'),
     }),
+
+    // creates new files containing the css extracted
+    // from the style raw string created by the css-loader
+    new MiniCssExtractPlugin({
+      // define the name of the new css file created
+      filename: '[name].bundle.css',
+    }),
   ],
 
   // controls what bundle information gets displayed in the consolde
@@ -59,7 +78,7 @@ const config = {
     children: false,
   },
 
-  // create .js.map files associated to the .js files outputed
+  // create .map files associated to the files outputed by webpack
   // to allow mapping (debug) between original and compiled files
   devtool: 'source-map',
 
