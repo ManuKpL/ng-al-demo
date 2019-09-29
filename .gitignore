@@ -1,0 +1,2 @@
+// prevent all node modules to be indexed by git
+node_modules

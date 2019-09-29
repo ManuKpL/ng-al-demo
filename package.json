@@ -5,5 +5,15 @@
   "main": "index.js",
   "repository": "git@github.com:ManuKpL/ng-al-demo.git",
   "author": "Emmanuel Capelle <emmanuel.capelle@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": ">=10.16.0"
+  }
 }
