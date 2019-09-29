@@ -4,6 +4,10 @@ import { resolve } from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import webpack from 'webpack';
+
+const isProd = process.env.NODE_ENV === 'production';
+const isDev = !isProd;
 
 const config = {
   // our main source file that should import almost all other files
@@ -16,9 +20,6 @@ const config = {
     filename: '[name].[hash].bundle.js',
     path: resolve(__dirname, './dist'),
   },
-
-  // define which webpack its built-in optimizations should be used
-  mode: 'development',
 
   module: {
     // define the loaders to apply for specific types of files
@@ -52,9 +53,6 @@ const config = {
     ],
   },
   plugins: [
-    // removes the content of the output directory before adding new content
-    new CleanWebpackPlugin(),
-
     // copies a template html file into the output directory
     // and injects links to all webpack compiled files
     new HtmlWebpackPlugin({
@@ -77,15 +75,38 @@ const config = {
   stats: {
     children: false,
   },
-
-  // create .map files associated to the files outputed by webpack
-  // to allow mapping (debug) between original and compiled files
-  devtool: 'source-map',
-
-  // when set to true, keeps the webpack process runing
-  // and reacting to changes in the entry files
-  watch: true,
 };
+
+if (isProd) {
+  Object.assign(config, {
+    // define which webpack its built-in optimizations should be used
+    mode: 'production',
+    plugins: [
+      ...config.plugins,
+      new CleanWebpackPlugin(), // removes the content of the output directory before adding new content
+    ],
+  });
+} else if (isDev) {
+  Object.assign(config, {
+    // define which webpack its built-in optimizations should be used
+    mode: 'development',
+
+    plugins: [
+      ...config.plugins,
+      new webpack.HotModuleReplacementPlugin(), // uses hot reload, sending only changed data after new bundle
+    ],
+
+    // create .map files associated to the files outputed by webpack
+    // to allow mapping (debug) between original and compiled files
+    devtool: 'source-map',
+
+    devServer: {
+      publicPath: '/', // define the path for all relative path referenced files
+      port: 1337, // define which port to use in dev mode
+      progress: true, // display more information during bundling
+    },
+  });
+}
 
 // es2015 export syntax means we have to use the esm package when using webpack cli
 export default config;

@@ -5,4 +5,4 @@ import './styles.scss';
   p.innerHTML = paragraphText;
 
   document.body.appendChild(p);
-})('Hello from typescript and style files');
+})('Hello from dev server');
