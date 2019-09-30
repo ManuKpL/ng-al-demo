@@ -11,8 +11,14 @@ const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 
 const config = {
-  // our main source file that should import almost all other files
-  entry: resolve(__dirname, './src/main.ts'),
+  entry: {
+    // vendors source file, i.e. external module loaded to allow the app to work
+    // (must be loaded first)
+    vendors: resolve(__dirname, './src/vendors'),
+
+    // our main source file that should import almost all other files
+    main: resolve(__dirname, './src/main.ts'),
+  },
 
   // define where the files created by webpack should go
   // and how they should be named
@@ -41,6 +47,7 @@ const config = {
         exclude: /node_module/,
       },
 
+      // load Style files
       {
         test: /\.scss$/,
         use: [
@@ -50,6 +57,19 @@ const config = {
           'sass-loader', // uses node-sass to convert sass/scss style to css
         ],
         exclude: /node_module/,
+      },
+
+      // load favicon
+      {
+        test: /\.ico$/,
+        use: [
+          {
+            loader: 'file-loader', // this loader will copy the input file into the output dir
+            options: {
+              name: '[name].[ext]', // determines the name of the file after it is copied
+            },
+          },
+        ],
       },
     ],
   },
@@ -73,6 +93,11 @@ const config = {
 
     // prevent angular dependency request warning by setting ./src folder as root
     new webpack.ContextReplacementPlugin(/(.+)?angular(\\|\/)core(.+)?/, resolve(__dirname, './src'), {}),
+
+    // defines global variables to be used in the bundled app
+    new webpack.DefinePlugin({
+      PRODUCTION: JSON.stringify(isProd),
+    }),
   ],
 
   // controls what bundle information gets displayed in the consolde
@@ -96,7 +121,11 @@ if (isProd) {
     mode: 'production',
     plugins: [
       ...config.plugins,
-      new CleanWebpackPlugin(), // removes the content of the output directory before adding new content
+
+      // removes the content of the output directory before adding new content, except .gitkeep
+      new CleanWebpackPlugin({
+        cleanOnceBeforeBuildPatterns: ['**/*', '!.gitkeep'],
+      }),
     ],
   });
 } else if (isDev) {
