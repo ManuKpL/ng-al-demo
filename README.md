@@ -16,7 +16,23 @@ or
 npm install
 ```
 
-### Compile code
+### Run development app
+
+Dependending on your tool, either
+
+```
+yarn start
+```
+or
+```
+npm start
+```
+
+Then visit http://localhost:1337. To auto open the app in the default browser, add the `--open` option (`npm start --open`).
+
+### Run production app
+
+#### Compile code
 
 Dependending on your tool, either
 
@@ -28,16 +44,16 @@ or
 npm run build
 ```
 
-### Launch server
+#### Launch server
 
 Dependending on your tool, either
 
 ```
-yarn start
+yarn start:prod
 ```
 or
 ```
-npm start
+npm run start:prod
 ```
 
 Then visit http://localhost:3000
