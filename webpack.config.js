@@ -88,7 +88,7 @@ const config = {
     // from the style raw string created by the css-loader
     new MiniCssExtractPlugin({
       // define the name of the new css file created
-      filename: '[name].bundle.css',
+      filename: '[name].[hash].bundle.css',
     }),
 
     // prevent angular dependency request warning by setting ./src folder as root
