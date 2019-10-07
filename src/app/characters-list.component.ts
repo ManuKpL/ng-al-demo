@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { ICharacter } from './character';
 import { CharactersService } from './characters.service';
@@ -8,10 +8,16 @@ import { CharactersService } from './characters.service';
   templateUrl: './characters-list.component.html',
   styleUrls: ['./characters-list.component.scss'],
 })
-export class CharactersListComponent {
+export class CharactersListComponent implements OnInit {
   public character!: ICharacter;
 
-  constructor(private characterService: CharactersService) {
+  constructor(private characterService: CharactersService) {}
+
+  public ngOnInit(): void {
+    this.readCharacterFromService();
+  }
+
+  private readCharacterFromService(): void {
     this.character = this.characterService.getCharacter();
   }
 }
