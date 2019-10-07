@@ -4,7 +4,6 @@ import { resolve } from 'path';
 import { TsConfigPathsPlugin } from 'awesome-typescript-loader';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -54,11 +53,21 @@ const config = {
         exclude: /node_module/,
       },
 
+      {
+        test: /\.css$/,
+        use: [
+          'to-string-loader',
+          'css-loader', // converts css to raw style string
+          'postcss-loader', // uses plugins defined in postcss.config to enrich the produced css
+        ],
+        exclude: /node_module/,
+      },
+
       // load Style files
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader, // loader associated to the plugin creating new css files
+          'to-string-loader',
           'css-loader', // converts css to raw style string
           'postcss-loader', // uses plugins defined in postcss.config to enrich the produced css
           'sass-loader', // uses node-sass to convert sass/scss style to css
@@ -89,13 +98,6 @@ const config = {
 
       // defined the path to the template file to copy and inject into
       template: resolve(__dirname, './src/index.html'),
-    }),
-
-    // creates new files containing the css extracted
-    // from the style raw string created by the css-loader
-    new MiniCssExtractPlugin({
-      // define the name of the new css file created
-      filename: '[name].[hash].bundle.css',
     }),
 
     // prevent angular dependency request warning by setting ./src folder as root

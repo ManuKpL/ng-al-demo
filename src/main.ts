@@ -3,7 +3,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 // import assets
 import './favicon.ico';
-import './styles.scss';
 
 // import angular module to be used as application
 import { AppModule } from './app/app.module';
