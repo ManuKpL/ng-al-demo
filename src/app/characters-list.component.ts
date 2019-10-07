@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 
+import { ICharacter } from './character';
+
 @Component({
   selector: 'sw-characters-list',
   templateUrl: './characters-list.component.html',
   styleUrls: ['./characters-list.component.scss'],
 })
 export class CharactersListComponent {
-  public target = '_blank';
-
-  public character = {
+  public character: ICharacter = {
     id: 1,
     name: 'Luke Skywalker',
     gender: 'male',
