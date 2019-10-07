@@ -43,7 +43,14 @@ const config = {
       // (transpilation + backward compatiblity with more browsers)
       {
         test: /\.ts$/,
-        use: ['babel-loader', 'awesome-typescript-loader'],
+        use: ['babel-loader', 'awesome-typescript-loader', 'angular2-template-loader'],
+        exclude: /node_module/,
+      },
+
+      // load template files
+      {
+        test: /\.html$/,
+        loader: 'html-loader',
         exclude: /node_module/,
       },
 
