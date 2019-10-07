@@ -9,7 +9,7 @@ import { CharactersService } from './characters.service';
   styleUrls: ['./characters-list.component.scss'],
 })
 export class CharactersListComponent implements OnInit {
-  public character!: ICharacter;
+  public characters!: ICharacter[];
 
   constructor(private characterService: CharactersService) {}
 
@@ -18,6 +18,6 @@ export class CharactersListComponent implements OnInit {
   }
 
   private readCharacterFromService(): void {
-    this.character = this.characterService.getCharacter();
+    this.characters = this.characterService.getCharacters();
   }
 }

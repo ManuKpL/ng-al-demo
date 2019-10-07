@@ -4,4 +4,5 @@ export interface ICharacter {
   gender: string;
   url: string;
   image: string;
+  titles?: string[];
 }
