@@ -2,6 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'sw-root',
-  template: '<p>Hello from Angular</p>',
+  template: '<sw-characters-list></sw-characters-list>',
 })
 export class AppComponent {}
