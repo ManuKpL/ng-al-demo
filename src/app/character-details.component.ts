@@ -13,6 +13,6 @@ export class CharacterDetailsComponent implements OnInit {
   public target = '_blank';
 
   public ngOnInit(): void {
-    this.hasName = !!this.character.name;
+    this.hasName = this.character.hasName();
   }
 }

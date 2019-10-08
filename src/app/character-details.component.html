@@ -1,5 +1,5 @@
 <div class="container" *ngIf="hasName">
   <h3>{{ character.name }}</h3>
-  <p>{{ character.titles[0] }}</p>
+  <p>{{ character.displayTitle }}</p>
   <a [href]="character.url" [target]="target">See profile</a>
 </div>

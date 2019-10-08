@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Character } from './Character';
 
@@ -12,9 +13,10 @@ export class CharactersService {
 
   public fetchCharacters(count = 20): Observable<Character[]> {
     const uri = 'https://anapioficeandfire.com/api/characters';
-
-    return this.http.get<Character[]>(uri, {
+    const options = {
       params: new HttpParams().set('pageSize', count.toString()),
-    });
+    };
+
+    return this.http.get<Character[]>(uri, options).pipe(map(charsData => charsData.map(data => new Character(data))));
   }
 }
