@@ -18,6 +18,8 @@ export class CharactersListComponent implements OnInit {
   }
 
   private readCharacterFromService(): void {
-    this.characters = this.characterService.getCharacters();
+    this.characterService.getCharacters().subscribe(characters => {
+      this.characters = characters;
+    });
   }
 }

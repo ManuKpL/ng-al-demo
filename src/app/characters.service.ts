@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 import { Character } from './Character';
 
@@ -26,7 +27,7 @@ const CHARACTERS: Character[] = [
   providedIn: 'root',
 })
 export class CharactersService {
-  public getCharacters(): Character[] {
-    return CHARACTERS;
+  public getCharacters(): Observable<Character[]> {
+    return of(CHARACTERS);
   }
 }
