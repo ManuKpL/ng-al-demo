@@ -1,14 +1,12 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { CharactersModule } from '../characters/characters.module';
 import { AppComponent } from './app.component';
-import { CharacterDetailsComponent } from './character-details.component';
-import { CharactersListComponent } from './characters-list.component';
 
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [AppComponent, CharactersListComponent, CharacterDetailsComponent],
-  imports: [BrowserModule, HttpClientModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, CharactersModule],
 })
 export class AppModule {}
