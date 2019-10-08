@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ICharacter } from './character';
+import { Character } from './character';
 
 @Component({
   selector: 'sw-character-details',
@@ -7,7 +7,7 @@ import { ICharacter } from './character';
   styleUrls: ['./character-details.component.scss'],
 })
 export class CharacterDetailsComponent {
-  @Input() public character!: ICharacter;
+  @Input() public character!: Character;
 
   public target = '_blank';
 }

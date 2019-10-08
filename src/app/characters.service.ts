@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { ICharacter } from './character';
+import { Character } from './character';
 
-const CHARACTERS: ICharacter[] = [
+const CHARACTERS: Character[] = [
   {
     id: 583,
     name: 'Jon Snow',
@@ -26,7 +26,7 @@ const CHARACTERS: ICharacter[] = [
   providedIn: 'root',
 })
 export class CharactersService {
-  public getCharacters(): ICharacter[] {
+  public getCharacters(): Character[] {
     return CHARACTERS;
   }
 }

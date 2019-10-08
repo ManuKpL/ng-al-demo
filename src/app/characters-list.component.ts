@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ICharacter } from './character';
+import { Character } from './character';
 import { CharactersService } from './characters.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { CharactersService } from './characters.service';
   styleUrls: ['./characters-list.component.scss'],
 })
 export class CharactersListComponent implements OnInit {
-  public characters!: ICharacter[];
+  public characters!: Character[];
 
   constructor(private characterService: CharactersService) {}
 

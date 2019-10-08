@@ -10,7 +10,11 @@
             "single"
         ],
         "object-literal-sort-keys": false,
-        "object-literal-key-quotes": false
+        "object-literal-key-quotes": false,
+        "interface-name": [
+            true,
+            "never-prefix"
+        ]
     },
     "rulesDirectory": []
 }
