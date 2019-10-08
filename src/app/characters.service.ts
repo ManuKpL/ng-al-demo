@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Character } from './character';
+import { Character } from './Character';
 
 const CHARACTERS: Character[] = [
   {

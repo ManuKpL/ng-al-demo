@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Character } from './character';
+import { Character } from './Character';
 
 @Component({
   selector: 'sw-character-details',
