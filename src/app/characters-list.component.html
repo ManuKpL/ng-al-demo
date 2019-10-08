@@ -1,6 +1,14 @@
 <h2>Liste de personnages</h2>
 
-<section>
-  <sw-character-details *ngFor="let char of characters" [character]="char">
-  </sw-character-details>
-</section>
+<ng-container *ngIf="characters$ | async as chars; else loading">
+
+  <section *ngIf="chars.length > 3">
+    <sw-character-details *ngFor="let char of chars" [character]="char">
+    </sw-character-details>
+  </section>
+
+</ng-container>
+
+<ng-template #loading>
+  LOADING !!!!!
+</ng-template>

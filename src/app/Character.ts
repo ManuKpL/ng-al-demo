@@ -1,8 +1,8 @@
 export interface Character {
-  id: number;
+  // id: number;
   name: string;
   gender: string;
   url: string;
-  image: string;
-  titles?: string[];
+  titles: string[];
+  aliases: string[];
 }

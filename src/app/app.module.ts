@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,6 +9,6 @@ import { CharactersListComponent } from './characters-list.component';
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [AppComponent, CharactersListComponent, CharacterDetailsComponent],
-  imports: [BrowserModule],
+  imports: [BrowserModule, HttpClientModule],
 })
 export class AppModule {}

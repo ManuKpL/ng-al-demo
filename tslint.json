@@ -15,7 +15,14 @@
             true,
             "never-prefix"
         ],
-        "arrow-parens": false
+        "arrow-parens": false,
+        "variable-name": {
+            "options": [
+                "ban-keywords",
+                "check-format",
+                "allow-leading-underscore"
+            ]
+        }
     },
     "rulesDirectory": []
 }

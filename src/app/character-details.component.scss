@@ -2,24 +2,13 @@
   padding: 1rem;
   background-color: #22223345;
   border: 1px solid white;
-  display: flex;
-  margin: 10px 0;
-
-  img {
-    width: 150px;
-  }
-
-  div {
-    margin: 0 1rem;
-    flex: 1;
-  }
+  height: 100%;
 
   a {
     color: white;
     padding: 10px;
     border: 1px solid white;
     text-decoration: none;
-    float: right;
     &:hover {
       background-color: white;
       color: #222233;
