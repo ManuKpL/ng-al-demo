@@ -1,5 +1,4 @@
-<div class="container">
-  <!-- if character exists -->
+<div class="container" *ngIf="hasName">
   <aside>
     <img [src]="character.image" [alt]="character.name">
   </aside>
