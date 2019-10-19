@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { CharactersListComponent } from 'characters/characters-list.component';
+import { HomeComponent } from './home.component';
 
 export const appRoutes: Routes = [
   {
@@ -7,8 +8,12 @@ export const appRoutes: Routes = [
     component: CharactersListComponent,
   },
   {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/characters-list',
+    redirectTo: '/home',
   },
 ];

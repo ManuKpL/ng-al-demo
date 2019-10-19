@@ -20,7 +20,7 @@ const lambda = readFileSync(lambdaAscii, ENCODING);
 const app = express();
 
 // serve all files inside the given directory (dist)
-app.use(express.static(sourceDir));
+app.use('*', express.static(sourceDir));
 
 // launch the server on the given port and log message on success
 app.listen(PORT, () => {

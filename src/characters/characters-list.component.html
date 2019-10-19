@@ -1,5 +1,7 @@
 <h2>Liste de personnages</h2>
 
+<a routerLink="/">Back to home</a>
+
 <ng-container *ngIf="characters$ | async as chars; else loading">
 
   <section *ngIf="chars.length > 3">

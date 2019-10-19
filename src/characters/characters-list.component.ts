@@ -5,7 +5,6 @@ import { Character } from './Character';
 import { CharactersService } from './characters.service';
 
 @Component({
-  selector: 'sw-characters-list',
   templateUrl: './characters-list.component.html',
   styleUrls: ['./characters-list.component.scss'],
 })
