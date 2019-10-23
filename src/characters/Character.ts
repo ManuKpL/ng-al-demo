@@ -3,24 +3,25 @@ const NO_TITLE = 'No Title';
 export class Character {
   public id!: number;
   public name!: string;
-  public gender!: string;
-  public url!: string;
+  public gender!: 'Male' | 'Female';
   public titles!: string[];
   public aliases!: string[];
-
-  public displayTitle!: string;
+  public houseId!: number;
+  public playedBy!: string;
+  public imagePath!: string;
 
   constructor(data: Character) {
-    this.name = data.name || data.aliases[0];
+    this.id = data.id;
+    this.name = data.name;
     this.gender = data.gender;
-    this.url = data.url;
     this.titles = data.titles;
-    const [id] = this.url.match(/\d+$/g) || [];
-    this.id = parseInt(id, 10);
-    this.displayTitle = data.titles[0] || NO_TITLE;
+    this.aliases = data.aliases;
+    this.houseId = data.houseId;
+    this.playedBy = data.playedBy;
+    this.imagePath = data.imagePath;
   }
 
-  public hasName(): boolean {
-    return !!this.name;
+  public get displayTitle(): string {
+    return this.titles[0] || this.aliases[0] || NO_TITLE;
   }
 }

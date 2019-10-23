@@ -4,7 +4,7 @@ import { HomeComponent } from './home.component';
 
 export const appRoutes: Routes = [
   {
-    path: 'characters-list',
+    path: 'characters',
     component: CharactersListComponent,
   },
   {

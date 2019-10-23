@@ -3,11 +3,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { CharacterDetailsComponent } from './character-details.component';
+import { CharacterThumbnailComponent } from './character-thumbnail.component';
 import { CharactersListComponent } from './characters-list.component';
 
 @NgModule({
-  declarations: [CharacterDetailsComponent, CharactersListComponent],
+  declarations: [CharacterThumbnailComponent, CharactersListComponent],
   exports: [CharactersListComponent],
   imports: [CommonModule, HttpClientModule, RouterModule],
 })
