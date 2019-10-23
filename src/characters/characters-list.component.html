@@ -1,6 +1,7 @@
-<h2>Liste de personnages</h2>
-
-<a routerLink="/">Back to home</a>
+<header class="bg-blue padded">
+  <h1>Liste de personnages</h1>
+  <sw-button routerLink="/" primary>Back to home</sw-button>
+</header>
 
 <ng-container *ngIf="characters$ | async as chars; else loading">
 
@@ -12,5 +13,5 @@
 </ng-container>
 
 <ng-template #loading>
-  LOADING !!!!!
+  <sw-loader center></sw-loader>
 </ng-template>
