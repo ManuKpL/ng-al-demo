@@ -154,7 +154,6 @@ if (isProd) {
     devServer: {
       publicPath: '/', // define the path for all relative path referenced files
       port: 1337, // define which port to use in dev mode
-      progress: true, // display more information during bundling
       historyApiFallback: true, // if path matches no server side rendering, fallback /
     },
   });
