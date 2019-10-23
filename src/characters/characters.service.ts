@@ -5,18 +5,21 @@ import { map } from 'rxjs/operators';
 
 import { Character } from './Character';
 
+const mapCharacters = map<any[], Character[]>(data => data.map(el => new Character(el)));
+
 @Injectable({
   providedIn: 'root',
 })
 export class CharactersService {
   constructor(private readonly http: HttpClient) {}
 
-  public fetchCharacters(count = 20): Observable<Character[]> {
-    const uri = 'https://anapioficeandfire.com/api/characters';
-    const options = {
-      params: new HttpParams().set('pageSize', count.toString()),
-    };
+  public fetchCharacters(): Observable<Character[]> {
+    return this._fetchCharactersResource().pipe(mapCharacters);
+  }
 
-    return this.http.get<Character[]>(uri, options).pipe(map(charsData => charsData.map(data => new Character(data))));
+  private _fetchCharactersResource(): Observable<any[]> {
+    const uri = 'http://localhost:3000/characters';
+
+    return this.http.get<any[]>(uri);
   }
 }
