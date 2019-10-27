@@ -1,5 +1,7 @@
+@import '../assets/variables';
+
 button {
-  border: none;
+  border: 2px solid transparent;
   padding: .5rem;
   border-radius: 1px;
   font-weight: bold;
@@ -8,9 +10,19 @@ button {
   color: white;
 
   &:hover {
-    cursor: pointer;
+    &:not([disabled]) {
+      cursor: pointer;
+      border-color: white;
+    }
+    &[disabled] {
+      cursor: not-allowed;
+    }
   }
   &:focus {
     outline: none;
+  }
+
+  &[disabled] {
+    background-color: $sw-gray;
   }
 }

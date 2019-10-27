@@ -18,7 +18,7 @@ export class CharactersService {
   }
 
   private _fetchCharactersResource(): Observable<any[]> {
-    const uri = 'http://localhost:3000/characters';
+    const uri = '/api/characters';
 
     return this.http.get<any[]>(uri);
   }

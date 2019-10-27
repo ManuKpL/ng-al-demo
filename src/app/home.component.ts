@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 
     <section id="buttons">
       <sw-button routerLink="/characters" primary>Characters list</sw-button>
-      <sw-button routerLink="/houses" primary>Houses list</sw-button>
+      <sw-button routerLink="/houses" primary disabled>Houses list</sw-button>
     </section>
   `,
   styles: [

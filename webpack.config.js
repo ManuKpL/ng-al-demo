@@ -155,6 +155,12 @@ if (isProd) {
       publicPath: '/', // define the path for all relative path referenced files
       port: 1337, // define which port to use in dev mode
       historyApiFallback: true, // if path matches no server side rendering, fallback /
+      proxy: {
+        '/api': {
+          target: 'http://localhost:3000',
+          pathRewrite: { '^/api': '' },
+        },
+      },
     },
   });
 }
