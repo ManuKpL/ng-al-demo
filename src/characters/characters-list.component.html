@@ -1,7 +1,10 @@
-<header class="bg-blue padded">
+<header class="bg-blue padded spaced">
   <h1>Liste de personnages</h1>
-  <sw-button routerLink="/" primary>Back to home</sw-button>
 </header>
+
+<div class="spaced">
+  <sw-button routerLink="/" primary>Back to home</sw-button>
+</div>
 
 <ng-container *ngIf="characters$ | async as chars; else loading">
 

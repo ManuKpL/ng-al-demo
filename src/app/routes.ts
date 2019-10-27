@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { CharactersListComponent } from 'characters/characters-list.component';
+
+import { CharactersListComponent } from 'characters';
 import { HomeComponent } from './home.component';
 
 export const appRoutes: Routes = [
