@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import { Observable, Subscription } from 'rxjs';
 import { Character } from './Character';
 import { CharactersService } from './characters.service';
 

@@ -1,12 +1,14 @@
 {
-  "user": {
-    "login": "george",
-    "password": "martin",
-    "firstName": "George",
-    "lastName": "Martin",
-    "email": "george.r.r@martin.com",
-    "optEmail": true
-  },
+  "users": [
+    {
+      "login": "george",
+      "password": "martin",
+      "firstName": "George",
+      "lastName": "Martin",
+      "email": "george.r.r@martin.com",
+      "optEmail": true
+    }
+  ],
   "characters": [
     {
       "id": 27,
@@ -17,7 +19,7 @@
         "Shield of Lannisport",
         "Warden of the West",
         "Hand of the King",
-        "Savior of the City (of King's Landing)"
+        "Savior of the City"
       ],
       "aliases": [
         "The Lion of Lannister",
@@ -95,7 +97,7 @@
       "titles": [
         "Ser",
         "Warden of the Southern Marches",
-        "Knight of the Gate (formerly)"
+        "Knight of the Gate"
       ],
       "aliases": [
         "Blackfish",
@@ -182,7 +184,7 @@
       "titles": [
         "Ser",
         "Lord Commander of the Kingsguard",
-        "Warden of the East (formerly)"
+        "Warden of the East"
       ],
       "aliases": [
         "The Kingslayer",
@@ -199,7 +201,7 @@
       "name": "Jeor Mormont",
       "gender": "Male",
       "titles": [
-        "Lord of Bear Island (formerly)",
+        "Lord of Bear Island",
         "Lord Commander of the Night's Watch"
       ],
       "aliases": [
@@ -254,7 +256,7 @@
       "name": "Petyr Baelish",
       "gender": "Male",
       "titles": [
-        "Master of coin (formerly)",
+        "Master of coin",
         "Lord Paramount of the Trident",
         "Lord of Harrenhal",
         "Lord Protector of the Vale"
@@ -274,7 +276,7 @@
         "Lord Paramount of the Stormlands",
         "Lord of Storm's End",
         "Master of laws",
-        "Lord of the Seven Kingdoms (claimant)"
+        "Lord of the Seven Kingdoms"
       ],
       "aliases": [
         "The King in Highgarden",
@@ -361,7 +363,7 @@
       "titles": [
         "Prince of Winterfell",
         "Captain of Sea Bitch",
-        "Lord of the Iron Islands (by law of the green lands)"
+        "Lord of the Iron Islands"
       ],
       "aliases": [
         "Prince of Fools",
@@ -483,7 +485,7 @@
       "id": 395,
       "name": "House Tully of Riverrun",
       "region": "The Riverlands",
-      "coatOfArms": "A leaping silver trout on a field of blue and mud red(Paly wavy azure and gules, a trout embowed argent)",
+      "coatOfArms": "A leaping silver trout on a field of blue and mud red",
       "words": "Family, Duty, Honor",
       "seat": "Riverrun",
       "imagePath": "https://vignette.wikia.nocookie.net/gameofthrones/images/b/bd/House-Tully-Main-Shield.PNG/revision/latest?cb=20170523040648"
