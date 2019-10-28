@@ -10,15 +10,15 @@
 
 ## Requirements
 
-- créer un composant de `List` dans le dossier `houses`
-- remplacer dans le template de la page d'accueil le composant `Thumbnail` de l'exercice #1 par le nouveau composant
-- utiliser comme template du composant le `html` ci-dessous
-- utiliser comme style du composant le `scss` ci-dessous
-- déclarer une propriété dans le nouveau composant `List` pour stocker _en dur_ les données `json` ci-dessous
-- utiliser dans la zone _'CONTENT GOES HERE'_ le composant créé lors de l'exercice #1 autant de fois que nécessaire pour afficher tous les objets dans la liste de données (avec `*ngFor`)
-- passer les données du nouveau composant (parent) vers celui de l'exercice #1 (enfant) via un `Input`
-- supprimer les données de l'exercice #1 dans le nouveau composant et utiliser celles ci-dessous
-- retirer la section du template du component Accueil `home.component` et le style associé
+- [x] créer un composant de `List` dans le dossier `houses`
+- [x] remplacer dans le template de la page d'accueil le composant `Thumbnail` de l'exercice #1 par le nouveau composant
+- [x] utiliser comme template du composant le `html` ci-dessous
+- [x] utiliser comme style du composant le `scss` ci-dessous
+- [x] retirer la section du template du component Accueil `home.component` et le style associé
+- [x] déclarer une propriété dans le nouveau composant `List` pour stocker _en dur_ les données `json` ci-dessous
+- [x] utiliser dans la zone _'CONTENT GOES HERE'_ le composant créé lors de l'exercice #1 autant de fois que nécessaire pour afficher tous les objets dans la liste de données (avec `*ngFor`)
+- [x] passer les données du nouveau composant (parent) vers celui de l'exercice #1 (enfant) via un `Input`
+- [x] supprimer les données de l'exercice #1 dans le nouveau composant et utiliser celles ci-dessous
 
 ## Ressources
 
