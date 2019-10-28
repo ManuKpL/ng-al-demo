@@ -10,11 +10,14 @@
 
 ## Requirements
 
-- créer un composant de liste dans le dossier `houses`
-- utiliser le template et le style ci-dessous pour la mise en forme
-- supprimer les données de l'exercice #1 dans le nouveau composant et utiliser celles ci-dessous
-- afficher dans le template le composant créé lors de l'exercice #1 autant de fois que nécessaire pour afficher tous les objets dans la liste de données (sans dupliquer le code)
+- créer un composant de `List` dans le dossier `houses`
+- remplacer dans le template de la page d'accueil le composant `Thumbnail` de l'exercice #1 par le nouveau composant
+- utiliser comme template du composant le `html` ci-dessous
+- utiliser comme style du composant le `scss` ci-dessous
+- déclarer une propriété dans le nouveau composant `List` pour stocker _en dur_ les données `json` ci-dessous
+- utiliser dans la zone _'CONTENT GOES HERE'_ le composant créé lors de l'exercice #1 autant de fois que nécessaire pour afficher tous les objets dans la liste de données (sans dupliquer le code)
 - passer les données du nouveau composant (parent) vers celui de l'exercice #1 (enfant)
+- supprimer les données de l'exercice #1 dans le nouveau composant et utiliser celles ci-dessous
 
 ## Ressources
 
