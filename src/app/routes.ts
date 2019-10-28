@@ -1,19 +1,21 @@
 import { Routes } from '@angular/router';
 
-import { CharactersListComponent } from 'characters';
 import { HomeComponent } from './home.component';
 
 export const appRoutes: Routes = [
   {
     path: 'characters',
-    component: CharactersListComponent,
+    loadChildren: () => import('characters/characters.module').then(m => m.CharactersModule),
   },
   {
     path: 'home',
     component: HomeComponent,
+    data: {
+      pageTitle: 'Accueil',
+    },
   },
   {
-    path: '',
+    path: 'home',
     pathMatch: 'full',
     redirectTo: '/home',
   },
