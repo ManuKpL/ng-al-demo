@@ -10,7 +10,7 @@
 
 ## Requirements
 
-- créer un composant dans le dossier `houses`
+- créer un composant 'Thumbnail' dans le dossier `houses`
 - utiliser le template et le style ci-dessous pour la mise en forme
 - utiliser les données ci-dessous pour les liées dans le template aux endroit prévus (`img`, `h3`, `p`)
 - ajouter le composant créé dans le module des maisons `HouseModule`
