@@ -57,7 +57,7 @@ section {
     "coatOfArms": "A running grey direwolf, on an ice-white field",
     "words": "Winter is Coming",
     "seat": "Winterfell",
-    "imagePath": "https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Stark-Main-Shield.PNG/revision/latest?cb=20170101103142"
+    "imagePath": "https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Stark-Main-Shield.PNG"
   },
   {
     "id": 395,
@@ -66,7 +66,7 @@ section {
     "coatOfArms": "A leaping silver trout on a field of blue and mud red",
     "words": "Family, Duty, Honor",
     "seat": "Riverrun",
-    "imagePath": "https://vignette.wikia.nocookie.net/gameofthrones/images/b/bd/House-Tully-Main-Shield.PNG/revision/latest?cb=20170523040648"
+    "imagePath": "https://vignette.wikia.nocookie.net/gameofthrones/images/b/bd/House-Tully-Main-Shield.PNG"
   },
 ]
 ```
