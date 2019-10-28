@@ -5,7 +5,7 @@ import { AppPage } from 'shared';
 @Component({
   template: `
     <section id="content">
-      <!-- ADD CONTENT HERE -->
+      <sw-house-thumbnail></sw-house-thumbnail>
     </section>
   `,
   styles: [
