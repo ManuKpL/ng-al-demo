@@ -1,5 +1,13 @@
 # Créer un composant
 
+## Avant l'exercice
+
+- `git status`
+- si status pas clean, commit les changements ou les supprimer
+- `git fetch origin`
+- `git checkout 1-creating-a-component`
+- `git checkout -b <my-branch-name>`
+
 ## Requirements
 
 - créer un composant dans le dossier `houses`
