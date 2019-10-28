@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Character } from './Character';
 
 @Component({
-  selector: 'sw-character-details',
+  selector: 'sw-character-thumbnail',
   templateUrl: './character-thumbnail.component.html',
   styleUrls: ['./character-thumbnail.component.scss'],
 })

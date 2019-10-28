@@ -1,8 +1,8 @@
 <ng-container *ngIf="characters$ | async as chars; else loading">
 
   <section *ngIf="chars.length > 3">
-    <sw-character-details *ngFor="let char of chars" [character]="char">
-    </sw-character-details>
+    <sw-character-thumbnail *ngFor="let char of chars" [character]="char">
+    </sw-character-thumbnail>
   </section>
 
 </ng-container>
