@@ -7,8 +7,5 @@ export const charactersRoutes: Routes = [
     path: '',
     pathMatch: 'full',
     component: CharactersListComponent,
-    data: {
-      pageTitle: 'Liste de Personnages',
-    },
   },
 ];

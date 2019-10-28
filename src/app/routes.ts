@@ -10,9 +10,6 @@ export const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    data: {
-      pageTitle: 'Accueil',
-    },
   },
   {
     path: 'home',
