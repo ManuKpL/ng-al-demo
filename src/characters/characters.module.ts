@@ -9,6 +9,6 @@ import { CharactersListComponent } from './characters-list.component';
 @NgModule({
   declarations: [CharacterThumbnailComponent, CharactersListComponent],
   exports: [CharactersListComponent],
-  imports: [SharedModule, RouterModule.forChild(charactersRoutes)],
+  imports: [SharedModule],
 })
 export class CharactersModule {}
