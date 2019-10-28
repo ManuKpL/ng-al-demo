@@ -18,6 +18,7 @@
 - utiliser dans la zone _'CONTENT GOES HERE'_ le composant créé lors de l'exercice #1 autant de fois que nécessaire pour afficher tous les objets dans la liste de données (avec `*ngFor`)
 - passer les données du nouveau composant (parent) vers celui de l'exercice #1 (enfant) via un `Input`
 - supprimer les données de l'exercice #1 dans le nouveau composant et utiliser celles ci-dessous
+- retirer la section du template du component Accueil `home.component` et le style associé
 
 ## Ressources
 
