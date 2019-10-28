@@ -12,7 +12,7 @@
 
 - créer un composant 'Thumbnail' dans le dossier `houses`
 - utiliser le template et le style ci-dessous pour la mise en forme
-- utiliser les données ci-dessous pour les liées dans le template aux endroit prévus (`img`, `h3`, `p`)
+- utiliser les données ci-dessous pour les lier dans le template aux endroit prévus (`img`, `h3`, `p`)
 - ajouter le composant créé dans le module des maisons `HouseModule`
 - ajouter le composant créé dans l'application à l'emplacement du template prévu dans le `HomeComponent`
 - (bonus: associer le nom de la maison au texte alternatif de l'image)
