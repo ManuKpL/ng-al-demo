@@ -1,4 +1,4 @@
-# Créer un composant
+# Communication de composants
 
 ## Avant l'exercice
 
