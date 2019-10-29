@@ -5,7 +5,7 @@
 - `git status`
 - si status pas clean, commit les changements ou les supprimer
 - `git fetch origin`
-- `git checkout 4-conditional-style`
+- `git checkout 3-conditional-style`
 - `git checkout -b <my-branch-name>`
 
 ## Requirements
