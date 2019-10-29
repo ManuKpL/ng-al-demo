@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { invalidWord, AppPage } from 'shared';
 import { HousesService } from './houses.service';
 import { House } from './House';
 
@@ -9,7 +10,8 @@ import { House } from './House';
   templateUrl: './house-edition.component.html',
   styleUrls: ['./house-edition.component.scss'],
 })
-export class HouseEditionComponent implements OnInit {
+export class HouseEditionComponent implements AppPage, OnInit {
+  public pageTitle = 'House Edition';
   public house!: House | undefined;
 
   public editForm!: FormGroup;
@@ -40,12 +42,13 @@ export class HouseEditionComponent implements OnInit {
   private createForm(): void {
     const house = this.house || ({} as House);
 
-    this.name = new FormControl(house.name);
+    this.name = new FormControl(house.name, [Validators.required, invalidWord('foo')]);
+
     this.region = new FormControl(house.region);
     this.coatOfArms = new FormControl(house.coatOfArms);
     this.words = new FormControl(house.words);
     this.seat = new FormControl(house.seat);
-    this.imagePath = new FormControl(house.imagePath);
+    this.imagePath = new FormControl(house.imagePath, Validators.pattern(/^http.+\.(PNG|JPG|JPEG)/i));
 
     this.editForm = new FormGroup({
       name: this.name,
