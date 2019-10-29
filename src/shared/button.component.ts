@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'sw-button',
   template: `
-    <button type="button" [ngClass]="classname" [disabled]="inactive">
+    <button [type]="type" [ngClass]="classname" [disabled]="isDisabled()">
       <ng-content></ng-content>
     </button>
   `,
@@ -13,13 +13,12 @@ export class ButtonComponent implements OnInit {
   @Input() public primary!: any;
   @Input() public secondary!: any;
   @Input() public disabled!: any;
+  @Input() public type = 'button';
 
   public classname!: string;
-  public inactive!: true | null;
 
   public ngOnInit(): void {
     this.setClassName();
-    this.inactive = this.isDisabled() ? true : null;
   }
 
   private setClassName() {
@@ -40,7 +39,7 @@ export class ButtonComponent implements OnInit {
     return this.primary !== undefined;
   }
 
-  private isDisabled() {
-    return this.disabled !== undefined;
+  private isDisabled(): true | null {
+    return ![false, undefined].includes(this.disabled) || null;
   }
 }
