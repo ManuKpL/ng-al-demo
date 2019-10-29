@@ -2,51 +2,25 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap');
 
 .color {
-  &-primary {
-    color: $sw-primary;
-  }
-  &-secondary {
-    color: $sw-secondary;
-  }
-  &-purple {
-    color: $sw-purple;
-  }
-  &-blue {
-    color: $sw-blue;
-  }
-  &-gray {
-    color: $sw-gray;
-  }
-  &-green {
-    color: $sw-green;
-  }
-  &-orange {
-    color: $sw-orange;
-  }
+  &-primary { color: $sw-primary; }
+  &-secondary { color: $sw-secondary; }
+  &-purple { color: $sw-purple; }
+  &-blue { color: $sw-blue; }
+  &-gray { color: $sw-gray; }
+  &-green { color: $sw-green; }
+  &-orange { color: $sw-orange; }
+  &-white { color: white; }
 }
 
 .bg {
-  &-primary {
-    background-color: $sw-primary;
-  }
-  &-secondary {
-    background-color: $sw-secondary;
-  }
-  &-purple {
-    background-color: $sw-purple;
-  }
-  &-blue {
-    background-color: $sw-blue;
-  }
-  &-gray {
-    background-color: $sw-gray;
-  }
-  &-green {
-    background-color: $sw-green;
-  }
-  &-orange {
-    background-color: $sw-orange;
-  }
+  &-primary { background-color: $sw-primary; }
+  &-secondary { background-color: $sw-secondary; }
+  &-purple { background-color: $sw-purple; }
+  &-blue { background-color: $sw-blue; }
+  &-gray { background-color: $sw-gray; }
+  &-green { background-color: $sw-green; }
+  &-orange { background-color: $sw-orange; }
+  &-white { background-color: white; }
 }
 
 .padded {
@@ -55,4 +29,13 @@
 
 .spaced {
   margin-bottom: 1rem;
+}
+
+.box {
+  border-radius: 1px;
+  box-shadow: 1px 1px 2px 0 #222244;
+}
+
+.text-center {
+  text-align: center;
 }

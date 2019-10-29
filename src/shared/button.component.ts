@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'sw-button',
   template: `
-    <button type="button" [ngClass]="classname" [disabled]="inactive">
+    <button type="button" class="box" [ngClass]="classname" [disabled]="inactive">
       <ng-content></ng-content>
     </button>
   `,
