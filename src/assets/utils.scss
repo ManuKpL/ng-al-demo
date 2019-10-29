@@ -3,10 +3,10 @@
 
 .color {
   &-primary {
-    color: $sw-orange;
+    color: $sw-primary;
   }
   &-secondary {
-    color: $sw-green;
+    color: $sw-secondary;
   }
   &-purple {
     color: $sw-purple;
@@ -27,10 +27,10 @@
 
 .bg {
   &-primary {
-    background-color: $sw-orange;
+    background-color: $sw-primary;
   }
   &-secondary {
-    background-color: $sw-green;
+    background-color: $sw-secondary;
   }
   &-purple {
     background-color: $sw-purple;
