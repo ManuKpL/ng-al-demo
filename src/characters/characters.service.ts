@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 import { Character } from './Character';
 
@@ -11,10 +11,17 @@ const mapCharacters = map<any[], Character[]>(data => data.map(el => new Charact
   providedIn: 'root',
 })
 export class CharactersService {
+  public characters!: Character[];
+
   constructor(private readonly http: HttpClient) {}
 
   public fetchCharacters(): Observable<Character[]> {
-    return this._fetchCharactersResource().pipe(mapCharacters);
+    return this._fetchCharactersResource().pipe(
+      mapCharacters,
+      tap(characters => {
+        this.characters = characters;
+      }),
+    );
   }
 
   private _fetchCharactersResource(): Observable<any[]> {

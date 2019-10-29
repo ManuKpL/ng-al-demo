@@ -1,16 +1,16 @@
-<ng-container *ngIf="characters$ | async as chars; else loading">
+<section *ngIf="selectedCharacter" class="spaced">
+  <sw-character-thumbnail [character]="selectedCharacter"></sw-character-thumbnail>
+</section>
 
-  <section *ngIf="selectedCharacter" class="spaced">
-    <sw-character-thumbnail [character]="selectedCharacter">
-    </sw-character-thumbnail>
-  </section>
+<div class="spaced">
+  <input type="text" [(ngModel)]="filterInput" (keyup)="onFilter()" [placeholder]="filterPlaceholder" />
+  <sw-button secondary (click)="clearFilter()">clear</sw-button>
+</div>
 
-  <section>
-    <sw-character-thumbnail *ngFor="let char of chars" [character]="char" (onSelect)="onSelectCharacter($event)">
-    </sw-character-thumbnail>
-  </section>
-
-</ng-container>
+<section *ngIf="characters.length; else loading">
+  <sw-character-thumbnail *ngFor="let char of characters" [character]="char" (onSelect)="onSelectCharacter($event)">
+  </sw-character-thumbnail>
+</section>
 
 <ng-template #loading>
   <sw-loader center></sw-loader>

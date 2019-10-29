@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import { AppPage } from 'shared';
 import { Character } from './Character';
@@ -11,8 +10,12 @@ import { CharactersService } from './characters.service';
 })
 export class CharactersListComponent implements OnInit, AppPage {
   public pageTitle = 'Liste de Personnages';
-  public characters$!: Observable<Character[]>;
+  public filterPlaceholder = 'Filtrer par nom';
+  public characters: Character[] = [];
   public selectedCharacter!: Character;
+  public filterInput!: string;
+
+  private fullCharactersList!: Character[];
 
   constructor(private characterService: CharactersService) {}
 
@@ -20,11 +23,25 @@ export class CharactersListComponent implements OnInit, AppPage {
     this.readCharactersFromService();
   }
 
+  public onFilter(): void {
+    this.characters = this.fullCharactersList.filter(character => {
+      return character.name.toLowerCase().startsWith(this.filterInput.toLowerCase());
+    });
+  }
+
+  public clearFilter(): void {
+    this.characters = this.fullCharactersList;
+    this.filterInput = '';
+  }
+
   public onSelectCharacter(character: Character): void {
     this.selectedCharacter = character;
   }
 
   private readCharactersFromService(): void {
-    this.characters$ = this.characterService.fetchCharacters();
+    this.characterService.fetchCharacters().subscribe(characters => {
+      this.fullCharactersList = characters;
+      this.characters = this.fullCharactersList;
+    });
   }
 }
