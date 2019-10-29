@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { AppPage } from 'shared';
 import { House } from './House';
 
 @Component({
@@ -11,7 +12,9 @@ import { House } from './House';
   `,
   styleUrls: ['./houses-list.component.scss'],
 })
-export class HousesListComponent {
+export class HousesListComponent implements AppPage {
+  public pageTitle = 'Liste des Maisons';
+
   public houses: House[] = [
     {
       id: 229,
