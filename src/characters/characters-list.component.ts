@@ -12,11 +12,16 @@ import { CharactersService } from './characters.service';
 export class CharactersListComponent implements OnInit, AppPage {
   public pageTitle = 'Liste de Personnages';
   public characters$!: Observable<Character[]>;
+  public selectedCharacter!: Character;
 
   constructor(private characterService: CharactersService) {}
 
   public ngOnInit(): void {
     this.readCharactersFromService();
+  }
+
+  public onSelectCharacter(character: Character): void {
+    this.selectedCharacter = character;
   }
 
   private readCharactersFromService(): void {

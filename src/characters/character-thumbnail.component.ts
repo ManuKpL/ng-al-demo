@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Character } from './Character';
 
 @Component({
@@ -8,8 +8,9 @@ import { Character } from './Character';
 })
 export class CharacterThumbnailComponent {
   @Input() public character!: Character;
+  @Output() public onSelect = new EventEmitter<Character>();
 
   public openCharacterDetails(): void {
-    console.info('Open details for character', this.character);
+    this.onSelect.emit(this.character);
   }
 }

@@ -1,7 +1,12 @@
 <ng-container *ngIf="characters$ | async as chars; else loading">
 
-  <section *ngIf="chars.length > 3">
-    <sw-character-thumbnail *ngFor="let char of chars" [character]="char">
+  <section *ngIf="selectedCharacter" class="spaced">
+    <sw-character-thumbnail [character]="selectedCharacter">
+    </sw-character-thumbnail>
+  </section>
+
+  <section>
+    <sw-character-thumbnail *ngFor="let char of chars" [character]="char" (onSelect)="onSelectCharacter($event)">
     </sw-character-thumbnail>
   </section>
 
