@@ -10,7 +10,7 @@ export const housesRoutes: Routes = [
     component: HousesListComponent,
   },
   {
-    path: ':id/edit',
+    path: ':houseId/edit',
     component: HouseEditionComponent,
   },
 ];

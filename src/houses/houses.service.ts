@@ -40,4 +40,8 @@ export class HousesService {
   public fetchHouses(): Observable<House[]> {
     return of(this.houses);
   }
+
+  public house(id: number): House | undefined {
+    return this.houses.find(house => house.id === id);
+  }
 }
