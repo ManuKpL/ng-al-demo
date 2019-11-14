@@ -1,7 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { AppPage } from 'shared';
 
 @Component({
-  selector: 'app-root',
-  template: '<p>Hello from Angular</p>',
+  encapsulation: ViewEncapsulation.None,
+  selector: 'sw-root',
+  template: `
+    <sw-nav [pageName]="activatedPageName"></sw-nav>
+    <router-outlet (activate)="onRouteActivated($event)"></router-outlet>
+  `,
+  styleUrls: ['./app.component.scss', '../assets/utils.scss'],
 })
-export class AppComponent {}
+export class AppComponent {
+  public activatedPageName!: string;
+
+  public onRouteActivated(activatedPage: AppPage): void {
+    this.activatedPageName = activatedPage.pageTitle;
+  }
+}

@@ -8,7 +8,22 @@
         "quotemark": [
             true,
             "single"
-        ]
+        ],
+        "object-literal-sort-keys": false,
+        "object-literal-key-quotes": false,
+        "ordered-imports": false,
+        "interface-name": [
+            true,
+            "never-prefix"
+        ],
+        "arrow-parens": false,
+        "variable-name": {
+            "options": [
+                "ban-keywords",
+                "check-format",
+                "allow-leading-underscore"
+            ]
+        }
     },
     "rulesDirectory": []
 }

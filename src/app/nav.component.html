@@ -1,0 +1,13 @@
+<header class="bg-blue padded spaced">
+  <h1>{{ pageName }}</h1>
+  <sw-button routerLink="/home" primary>Home</sw-button>
+  <sw-button routerLink="/characters" primary>Characters list</sw-button>
+  <sw-button routerLink="/houses" primary>Houses list</sw-button>
+  <ng-container *ngIf="auth.currentUser; else login">
+    <span>{{ auth.currentUser.login }}</span>
+  </ng-container>
+  <ng-template #login>
+    <sw-button routerLink="/auth/login" secondary>Login</sw-button>
+  </ng-template>
+
+</header>

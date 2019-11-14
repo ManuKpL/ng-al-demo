@@ -1,0 +1,58 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap');
+
+.color {
+  &-primary {
+    color: $sw-primary;
+  }
+  &-secondary {
+    color: $sw-secondary;
+  }
+  &-purple {
+    color: $sw-purple;
+  }
+  &-blue {
+    color: $sw-blue;
+  }
+  &-gray {
+    color: $sw-gray;
+  }
+  &-green {
+    color: $sw-green;
+  }
+  &-orange {
+    color: $sw-orange;
+  }
+}
+
+.bg {
+  &-primary {
+    background-color: $sw-primary;
+  }
+  &-secondary {
+    background-color: $sw-secondary;
+  }
+  &-purple {
+    background-color: $sw-purple;
+  }
+  &-blue {
+    background-color: $sw-blue;
+  }
+  &-gray {
+    background-color: $sw-gray;
+  }
+  &-green {
+    background-color: $sw-green;
+  }
+  &-orange {
+    background-color: $sw-orange;
+  }
+}
+
+.padded {
+  padding: 1rem;
+}
+
+.spaced {
+  margin-bottom: 1rem;
+}

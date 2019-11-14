@@ -1,0 +1,42 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input formControlName="name" id="name" type="text" />
+    <span *ngIf="name?.errors?.noFoo" class="color-primary">{{ name?.errors?.noFoo }}</span>
+  </div>
+
+  <div class="form-group">
+    <label for="region">Region</label>
+    <input formControlName="region" id="region" type="text" />
+  </div>
+
+  <div class="form-group">
+    <label for="coatOfArms">Coat of arms</label>
+    <input formControlName="coatOfArms" id="coatOfArms" type="text" />
+  </div>
+
+  <div class="form-group">
+    <label for="words">Words</label>
+    <input formControlName="words" id="words" type="text" />
+  </div>
+
+  <div class="form-group">
+    <label for="seat">Seat</label>
+    <input formControlName="seat" id="seat" type="text" />
+  </div>
+
+  <div class="form-group">
+    <label for="imagePath">Image Path</label>
+    <input formControlName="imagePath" id="imagePath" type="text" />
+  </div>
+
+  <div>
+    <sw-button type="submit" primary [disabled]="editForm.invalid">Save</sw-button>
+    <sw-button secondary>Cancel</sw-button>
+  </div>
+</form>
+
+
+<aside>
+  <sw-house-thumbnail [house]="editForm.value"></sw-house-thumbnail>
+</aside>

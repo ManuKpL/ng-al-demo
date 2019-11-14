@@ -1,0 +1,25 @@
+@import '../assets/variables';
+
+span#loader {
+  width: 5vw;
+  height: 5vw;
+  display: block;
+  border-radius: 50%;
+  border: .1rem solid $sw-blue;
+  box-shadow: 0 -2px 3px 1px $sw-green;
+  animation: swRotate 2s linear infinite;
+  margin: .5rem;
+
+  &.centered {
+    margin: .5rem auto;
+  }
+}
+
+@keyframes swRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
